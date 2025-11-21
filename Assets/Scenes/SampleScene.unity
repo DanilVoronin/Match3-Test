@@ -166,6 +166,8 @@ MonoBehaviour:
   Height: 10
   Width: 10
   _currentMatch3State: 0
+  _destroyItems:
+  - {fileID: 11400000, guid: 8a362a1128165f242b92699babe6240f, type: 2}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,7 +433,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae3c5198cbd0584bacf354da778eff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fillField: {fileID: 11400000, guid: b32d307233f95cc4c87bf50e6156b922, type: 2}
+  _createField:
+  - {fileID: 11400000, guid: b32d307233f95cc4c87bf50e6156b922, type: 2}
+  _swapPlaces:
+  - {fileID: 11400000, guid: b544ee83e94a237459981dab48ca3d87, type: 2}
+  _errorSwapPlaces:
+  - {fileID: 11400000, guid: 1dbecb676d3faac4aae02d267e258d21, type: 2}
+  _first: {fileID: 0}
+  _last: {fileID: 0}
 --- !u!1 &1185202313
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,6 +518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _match3Manager: {fileID: 365495028}
   _managerPools: {fileID: 1185202315}
+  _match3UserInput: {fileID: 1096025137}
 --- !u!114 &1730401725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -574,6 +584,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _commands:
   - {fileID: 11400000, guid: b32d307233f95cc4c87bf50e6156b922, type: 2}
+  - {fileID: 11400000, guid: 1dbecb676d3faac4aae02d267e258d21, type: 2}
+  - {fileID: 11400000, guid: b544ee83e94a237459981dab48ca3d87, type: 2}
+  - {fileID: 11400000, guid: 8a362a1128165f242b92699babe6240f, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

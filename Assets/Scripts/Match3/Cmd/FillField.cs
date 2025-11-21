@@ -57,6 +57,8 @@ namespace Match3.Cmd
                         Sequence sequenceItem = DOTween.Sequence();
 
                         Match3ItemField item = GetRandobMatch3ItemField();
+                        field[x, y] = item;
+
                         item.transform.transform.position = new Vector2(x, y);
                         item.transform.transform.localScale = Vector3.zero;
                         item.gameObject.SetActive(true);

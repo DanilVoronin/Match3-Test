@@ -1,4 +1,6 @@
-﻿
+﻿using System.Collections.Generic;
+using System.Linq;
+
 namespace Match3.PlayingField
 {
     /// <summary>
@@ -30,10 +32,75 @@ namespace Match3.PlayingField
         public void SwapPlaces(ref Match3ItemField itemX, ref Match3ItemField itemY)
         {
             if (_playingField.GetPositionElement(itemX, out var indexItemX) != null &&
-                _playingField.GetPositionElement(itemX, out var indexItemY) != null)
+                _playingField.GetPositionElement(itemY, out var indexItemY) != null)
             {
                 _playingField[indexItemX.Value.x, indexItemX.Value.y] = itemY;
                 _playingField[indexItemY.Value.x, indexItemY.Value.y] = itemX;
+            }
+        }
+
+        public List<Index2D> FindAllMatches()
+        {
+            List<Index2D> matches = new List<Index2D>();
+            int width = _playingField.GetLength(0);
+            int height = _playingField.GetLength(1);
+
+            List<Index2D> row = new List<Index2D>();
+
+            // Проверяем горизонтальные последовательности
+            for (int y = 0; y < height; y++)
+            {
+                for (int x = 0; x < width - 1; x++)
+                {
+                    //В ряду есть элементы
+                    if (row.Count > 0)
+                    {
+                        Index2D last = row.Last();
+                        if (_playingField[last.x, last.y].Id != _playingField[x, y].Id)
+                        {
+                            if (row.Count > 2) AddItemsToList(matches,row);
+                            row.Clear();
+                        }
+                    }
+                    
+                    row.Add(new Index2D(x,y));
+                }
+            }
+
+            if (row.Count > 2) AddItemsToList(matches, row);
+            row.Clear();
+
+            // Проверяем вертикальные последовательности
+            for (int x = 0; x < width; x++)
+            {
+                for (int y = 0; y < height - 1; y++)
+                {
+                    //В ряду есть элементы
+                    if (row.Count > 0)
+                    {
+                        Index2D last = row.Last();
+                        if (_playingField[last.x, last.y].Id != _playingField[x, y].Id)
+                        {
+                            if (row.Count > 2) AddItemsToList(matches, row);
+                            row.Clear();
+                        }
+                    }
+
+                    row.Add(new Index2D(x, y));
+                }
+            }
+
+            if (row.Count > 2) AddItemsToList(matches, row);
+            row.Clear();
+
+            return matches;
+        }
+
+        private void AddItemsToList(List<Index2D> target, List<Index2D> row)
+        {
+            foreach (var item in row)
+            {
+                if (!target.Contains(item)) target.Add(item);
             }
         }
     }

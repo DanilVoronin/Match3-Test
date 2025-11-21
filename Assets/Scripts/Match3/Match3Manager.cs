@@ -60,6 +60,7 @@ namespace Match3
         private Queue<Match3CmdBase> _commandQueue; //Ёто можно вынести в менедре команд
 
         [SerializeField] private Match3State _currentMatch3State;
+        [SerializeField] private List<Match3CmdBase> _destroyItems;
 
         [Inject]
         private void Construct(IMatch3PlayingField match3PlayingField)
@@ -136,8 +137,40 @@ namespace Match3
                 _commandQueue.Dequeue().Execute(OnCompleteCommand);
             }
             else
-            { 
+            {
+                if (_match3PlayingField.FindAllMatches().Count > 0)
+                {
+                    _commandQueue = new Queue<Match3CmdBase>(_destroyItems);
+                    _commandQueue.Dequeue().Execute(OnCompleteCommand);
+                }
+
                 _currentMatch3State = Match3State.CompletingExecutionCommands;
+            }
+        }
+
+        //“олько дл€ теста
+        private void OnDrawGizmos()
+        {
+            if (_match3PlayingField == null ||
+                _match3PlayingField.PlayingField == null) return;
+
+            for (int x = 0; x < _match3PlayingField.PlayingField.GetLength(0); x++)
+            {
+                for (int y = 0; y < _match3PlayingField.PlayingField.GetLength(1); y++)
+                {
+                    if (_match3PlayingField.PlayingField[x, y] != null)
+                    {
+                        switch (_match3PlayingField.PlayingField[x, y].Id)
+                        {
+                            case "ItemBlue": Gizmos.color = Color.blue; break;
+                            case "ItemGreen": Gizmos.color = Color.green; break;
+                            case "ItemRed": Gizmos.color = Color.red; break;
+                            default: break;
+                        }
+
+                        Gizmos.DrawSphere(new Vector3(x, y, -2),0.1f);
+                    }
+                }
             }
         }
     }
