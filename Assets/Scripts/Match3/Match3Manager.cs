@@ -142,6 +142,8 @@ namespace Match3
                 {
                     _commandQueue = new Queue<Match3CmdBase>(_destroyItems);
                     _commandQueue.Dequeue().Execute(OnCompleteCommand);
+
+                    return;
                 }
 
                 _currentMatch3State = Match3State.CompletingExecutionCommands;

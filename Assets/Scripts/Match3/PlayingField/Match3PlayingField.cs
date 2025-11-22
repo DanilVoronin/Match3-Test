@@ -50,7 +50,7 @@ namespace Match3.PlayingField
             // Проверяем горизонтальные последовательности
             for (int y = 0; y < height; y++)
             {
-                for (int x = 0; x < width - 1; x++)
+                for (int x = 0; x < width; x++)
                 {
                     //В ряду есть элементы
                     if (row.Count > 0)
@@ -73,7 +73,7 @@ namespace Match3.PlayingField
             // Проверяем вертикальные последовательности
             for (int x = 0; x < width; x++)
             {
-                for (int y = 0; y < height - 1; y++)
+                for (int y = 0; y < height; y++)
                 {
                     //В ряду есть элементы
                     if (row.Count > 0)

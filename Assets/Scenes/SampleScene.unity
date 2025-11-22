@@ -168,6 +168,8 @@ MonoBehaviour:
   _currentMatch3State: 0
   _destroyItems:
   - {fileID: 11400000, guid: 8a362a1128165f242b92699babe6240f, type: 2}
+  - {fileID: 11400000, guid: d8faab731f4a4494780f2a3945393ddd, type: 2}
+  - {fileID: 11400000, guid: b32d307233f95cc4c87bf50e6156b922, type: 2}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,6 +589,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1dbecb676d3faac4aae02d267e258d21, type: 2}
   - {fileID: 11400000, guid: b544ee83e94a237459981dab48ca3d87, type: 2}
   - {fileID: 11400000, guid: 8a362a1128165f242b92699babe6240f, type: 2}
+  - {fileID: 11400000, guid: d8faab731f4a4494780f2a3945393ddd, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
