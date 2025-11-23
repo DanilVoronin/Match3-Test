@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76fbdc77a05d09d43b1f6d1b161e86e1, type: 3}
   m_Name: MoveDownItems
   m_EditorClassIdentifier: 
-  <Speed>k__BackingField: 0.5
+  <Speed>k__BackingField: 0.2

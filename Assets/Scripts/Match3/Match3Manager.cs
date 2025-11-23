@@ -162,14 +162,7 @@ namespace Match3
                 {
                     if (_match3PlayingField.PlayingField[x, y] != null)
                     {
-                        switch (_match3PlayingField.PlayingField[x, y].Id)
-                        {
-                            case "ItemBlue": Gizmos.color = Color.blue; break;
-                            case "ItemGreen": Gizmos.color = Color.green; break;
-                            case "ItemRed": Gizmos.color = Color.red; break;
-                            default: break;
-                        }
-
+                        Gizmos.color = _match3PlayingField.PlayingField[x, y].GetColor();
                         Gizmos.DrawSphere(new Vector3(x, y, -2),0.1f);
                     }
                 }

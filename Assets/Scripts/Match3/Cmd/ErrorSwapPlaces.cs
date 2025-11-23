@@ -39,10 +39,12 @@ namespace Match3.Cmd
             item2.Append(_match3UserInput.Last.transform.DOMove(_match3UserInput.First.transform.position, Speed));
             item2.Append(_match3UserInput.Last.transform.DOMove(_match3UserInput.Last.transform.position, Speed));
 
-            sequence.Append(item1);
-            sequence.Append(item2);
+            sequence.Join(item1);
+            sequence.Join(item2);
 
             sequence.OnComplete(() => cmdCallback?.Invoke(this));
+
+            _match3UserInput.ClearTarget();
         }
     }
 }

@@ -96,7 +96,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5580639141595775314}
   - component: {fileID: 766137818489304045}
-  - component: {fileID: 3958014150632556792}
+  - component: {fileID: -4428076698121527666}
   m_Layer: 0
   m_Name: ItemBlue
   m_TagString: Untagged
@@ -142,7 +142,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.7, y: 0.7, z: 0.7}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3958014150632556792
+--- !u!114 &-4428076698121527666
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8963321632337804243}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a977c5be1f910dd4fafde8e65775ba1e, type: 3}
+  m_Script: {fileID: 11500000, guid: 594eae880ab0f6547852055599a1a29d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <Id>k__BackingField: ItemBlue

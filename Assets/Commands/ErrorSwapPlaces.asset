@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afc3d1769cfd7a344bc2d720455063e2, type: 3}
   m_Name: ErrorSwapPlaces
   m_EditorClassIdentifier: 
-  <Speed>k__BackingField: 0.5
+  <Speed>k__BackingField: 0.1

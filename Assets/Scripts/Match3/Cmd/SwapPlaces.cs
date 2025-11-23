@@ -39,7 +39,7 @@ namespace Match3.Cmd
 
             sequence.OnComplete(() => cmdCallback?.Invoke(this));
 
-            _match3UserInput.CleatTarget();
+            _match3UserInput.ClearTarget();
         }
     }
 }

@@ -56,7 +56,7 @@ namespace Match3.PlayingField
                     if (row.Count > 0)
                     {
                         Index2D last = row.Last();
-                        if (_playingField[last.x, last.y].Id != _playingField[x, y].Id)
+                        if (_playingField[last.x, last.y].GetType() != _playingField[x, y].GetType())
                         {
                             if (row.Count > 2) AddItemsToList(matches,row);
                             row.Clear();
@@ -65,10 +65,10 @@ namespace Match3.PlayingField
                     
                     row.Add(new Index2D(x,y));
                 }
-            }
 
-            if (row.Count > 2) AddItemsToList(matches, row);
-            row.Clear();
+                if (row.Count > 2) AddItemsToList(matches, row);
+                row.Clear();
+            }
 
             // Проверяем вертикальные последовательности
             for (int x = 0; x < width; x++)
@@ -79,7 +79,7 @@ namespace Match3.PlayingField
                     if (row.Count > 0)
                     {
                         Index2D last = row.Last();
-                        if (_playingField[last.x, last.y].Id != _playingField[x, y].Id)
+                        if (_playingField[last.x, last.y].GetType() != _playingField[x, y].GetType())
                         {
                             if (row.Count > 2) AddItemsToList(matches, row);
                             row.Clear();
@@ -88,10 +88,10 @@ namespace Match3.PlayingField
 
                     row.Add(new Index2D(x, y));
                 }
-            }
 
-            if (row.Count > 2) AddItemsToList(matches, row);
-            row.Clear();
+                if (row.Count > 2) AddItemsToList(matches, row);
+                row.Clear();
+            }
 
             return matches;
         }

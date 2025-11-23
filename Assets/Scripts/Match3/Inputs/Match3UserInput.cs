@@ -106,12 +106,12 @@ namespace Match3.Inputs
                                 }
                                 else
                                 {
-                                    CleatTarget();
+                                    ClearTarget();
                                 }
                             }
                             else
                             {
-                                CleatTarget();
+                                ClearTarget();
                             }
                         }
                     }
@@ -122,7 +122,7 @@ namespace Match3.Inputs
         /// <summary>
         /// Уберает цель
         /// </summary>
-        public void CleatTarget()
+        public void ClearTarget()
         {
             _first = null;
             _last = null;
